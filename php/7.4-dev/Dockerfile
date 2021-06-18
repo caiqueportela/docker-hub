@@ -6,11 +6,13 @@ WORKDIR /app
 
 RUN apt-get update
 
-RUN pecl install swoole
+RUN pecl install swoole && docker-php-ext-enable swoole
 
-RUN pecl install parallel
+RUN pecl install parallel && docker-php-ext-enable parallel
 
-RUN pecl install ds
+RUN pecl install ds && docker-php-ext-enable ds
+
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 EXPOSE 8888
 
