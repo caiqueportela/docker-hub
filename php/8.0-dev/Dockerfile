@@ -27,7 +27,7 @@ RUN apt-get install -y \
     libxml2-dev \
     libzip-dev
 
-RUN apt-get autoremove
+RUN apt-get autoremove -y
 
 RUN docker-php-ext-install gd json mbstring curl pdo pdo_mysql pdo_pgsql pdo_sqlite simplexml sockets xml zip
 
