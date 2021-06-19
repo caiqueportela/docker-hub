@@ -31,6 +31,8 @@ RUN apt-get autoremove -y
 
 RUN docker-php-ext-install gd json mbstring curl pdo pdo_mysql pdo_pgsql pdo_sqlite simplexml sockets xml zip
 
+RUN docker-php-ext-enable gd json mbstring curl pdo pdo_mysql pdo_pgsql pdo_sqlite simplexml sockets xml zip
+
 RUN pecl install -D 'enable-sockets="yes" enable-openssl="yes" enable-http2="yes" enable-mysqlnd="yes" enable-swoole-json="yes" enable-swoole-curl="yes"' swoole \
     && docker-php-ext-enable swoole
 
